@@ -1,0 +1,10 @@
+
+GET http://localhost:3000/
+x-api-key: SECRET
+
+###
+
+GET http://localhost:3000/
+x-api-key: INCORRECT
+
+
