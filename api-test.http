@@ -3,9 +3,15 @@ GET http://localhost:3000/
 x-api-key: SECRET
 user-agent: Chrome
 
-###
+### forbidden
 
-GET http://localhost:3000/
+GET http://localhost:3000
 x-api-key: INCORRECT
 
+
+### get emoji by index
+
+GET http://localhost:3000/?index=133
+x-api-key: SECRET
+user-agent: Chrome
 
