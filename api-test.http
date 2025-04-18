@@ -11,7 +11,7 @@ x-api-key: INCORRECT
 
 ### get emoji by index
 
-GET http://localhost:3000/?index=133
+GET http://localhost:3000/?index=1
 x-api-key: SECRET
 user-agent: Chrome
 
