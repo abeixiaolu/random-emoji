@@ -3,6 +3,7 @@ import { BadRequestException, Injectable, PipeTransform } from '@nestjs/common';
 @Injectable()
 export class EmojiValidationPipe implements PipeTransform {
   transform(value: any) {
+    console.log('EmojiValidationPipe');
     if (!value) return;
     value = Number(value);
     if (Number.isNaN(value)) {

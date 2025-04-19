@@ -12,6 +12,7 @@ export class AppController {
     @Req() req: Request,
     @Query('index', EmojiValidationPipe) index?: number,
   ) {
+    console.log('AppController');
     return {
       emoji: this.appService.getEmoji(index),
       browser: req.browser,
