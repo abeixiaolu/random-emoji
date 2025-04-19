@@ -3,10 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggerMiddleware } from './common/logger/logger.middleware';
 import { LoggerService } from './logger.service';
-import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
+import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { AuthGuard } from './common/auth/auth.guard';
 import { TransformResponseInterceptor } from './common/transform-response/transform-response.interceptor';
 import { BrowserInterceptor } from './common/browser/browser.interceptor';
+import { AllExceptionFilterFilter } from './common/all-exception-filter/all-exception-filter.filter';
 
 @Module({
   imports: [],
@@ -25,6 +26,10 @@ import { BrowserInterceptor } from './common/browser/browser.interceptor';
     {
       provide: APP_INTERCEPTOR,
       useClass: BrowserInterceptor,
+    },
+    {
+      provide: APP_FILTER,
+      useClass: AllExceptionFilterFilter,
     },
   ],
 })
