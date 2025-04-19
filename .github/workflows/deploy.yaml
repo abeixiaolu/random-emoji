@@ -14,10 +14,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/build
       - name: Install Railway CLI
-        run: pnpm install -g @railway/cli
+        run: pnpm add --global @railway/cli
       - name: Check Railway CLI version
         run: railway --version
-      - name: Deploy to Railway
-        run: railway up -d -s random-emoji
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
