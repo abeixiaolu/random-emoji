@@ -16,6 +16,6 @@ jobs:
       - name: Install Railway CLI
         run: pnpm install -g @railway/cli
       - name: Deploy to Railway
-        run: railway up
+        run: railway up -d -s random-emoji
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
